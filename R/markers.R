@@ -52,10 +52,4 @@ print_marker_info <- function(markers) {
   }
 }
 
-#' Marker information from Jackson et al. (Nature 2020)
-#' 
-#' 
-#' @examples 
-#' data(jackson_2020_markers)
-"jackson_2020_markers"
 
