@@ -29,6 +29,7 @@ tidy_rownames_jackson <- function(sce) {
   
   rownames(sce) <- target_names
   
+  
   sce <- sce[rownames(sce) %in% jackson_2020_tag_target$Target,]
   blacklist <- c(
     "RutheniumTetroxide",
@@ -36,6 +37,9 @@ tidy_rownames_jackson <- function(sce) {
   )
   
   sce <- sce[!(rownames(sce) %in% blacklist)]
+
+  ## Manually fix HER2
+  rownames(sce)[rownames(sce) == "c-erbB-2 - Her2"] <- "HER2"
   
   sce
 }

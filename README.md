@@ -1,3 +1,3 @@
-# imctools
+# taproom: Tools for spAtial PROteOmics
 
-R package for dealing with IMC data
+R package for dealing with spatial proteomcs

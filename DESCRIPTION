@@ -1,5 +1,5 @@
-Package: imctools
-Title: R package for handling IMC data
+Package: taproom
+Title: Tools for spAtial PROteOmics
 Version: 0.1.0
 Depends: R (>= 3.6)
 Authors@R: 
