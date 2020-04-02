@@ -19,7 +19,9 @@ Imports:
   BiocGenerics,
   SummarizedExperiment,
   plyr,
-  stringr
+  stringr,
+  MASS,
+  broom
 Suggests:
   crayon
 RoxygenNote: 7.0.2
