@@ -6,13 +6,15 @@
 #' and reports the z-statistic. The more negative this is, the better the
 #' mutually-exclusive expression (to a first approximation).
 #'
-#' @sce An input \code{SummarizedExperiment} or \code{SingleCellExperiment}
-#' @marker_1 The name of the first marker (normally keratin)
-#' @marker_2 The name of the second marker (normally CD45/PTPRC)
+#' @param sce An input \code{SummarizedExperiment} or \code{SingleCellExperiment}
+#' @param marker_1 The name of the first marker (normally keratin)
+#' @param marker_2 The name of the second marker (normally CD45/PTPRC)
 #'
 #' @importFrom MASS rlm
 #' @importFrom SummarizedExperiment assay
 #' @importFrom broom tidy
+#'
+#' @export
 imc_exclusive_marker_score <- function(sce,
                                        marker_1 = "pan Cytokeratin",
                                        marker_2 = "CD45",

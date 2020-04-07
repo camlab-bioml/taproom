@@ -1,47 +1,60 @@
 
 
-#' Convert from original SC_Dat.csv rownames to understandable ones
-#' 
-#' @param sce Input SingleCellExperiment
-#' 
-#' @importFrom utils data
-#' @importFrom BiocGenerics rownames
-#' @importFrom stringr str_locate str_sub
-#' @importFrom plyr mapvalues
-#' 
-#' @export
-tidy_rownames_jackson <- function(sce) {
-  
-  rn <- rownames(sce)
-  
-  ## The metal tag is always the 5 characters
-  ## preceeding "Di"
-  di_loc_start <- str_locate(rn, "Di")[,'start']
-  metal_name <- str_sub(rn, di_loc_start -5, di_loc_start-1)
-  metal_name[is.na(metal_name)] <- rn[is.na(metal_name)]
-  
-  
-  suppressMessages({
-    target_names <- mapvalues(metal_name, 
-                    jackson_2020_tag_target$`Metal Tag`,
-                    jackson_2020_tag_target$Target)
-  })
-  
-  rownames(sce) <- target_names
-  
-  
-  sce <- sce[rownames(sce) %in% jackson_2020_tag_target$Target,]
-  blacklist <- c(
-    "RutheniumTetroxide",
-    "undefined"
-  )
-  
-  sce <- sce[!(rownames(sce) %in% blacklist)]
 
-  ## Manually fix HER2
-  rownames(sce)[rownames(sce) == "c-erbB-2 - Her2"] <- "HER2"
-  
+
+#' @keywords internal
+winsorize_one <- function(y,
+                          w_limits) {
+  q <- quantile(y, p = w_limits)
+  y[y < q[1]] <- q[1]
+  y[y > q[2]] <- q[2]
+  y
+}
+
+#' Winsorize the (log) counts
+#'
+#' @export
+winsorize <- function(sce,
+                      exprs_values = "logcounts",
+                      w_limits = c(0.05, 0.95)) {
+
+  ## Save unwinsorized expression values
+  assay(sce, paste0(exprs_values, "_unwinsorized")) <- assay(sce, exprs_values)
+
+  assay(sce, exprs_values) <- t(apply(assay(sce, exprs_values),
+                                    1,
+                                    winsorize_one,
+                                    w_limits))
+
   sce
 }
 
+#' Write to a CSV file to be read in by python
+#'
+#' Writes the cell names as row names, and the (X,Y) co-ordinates
+#' as the first two columns (named \code{X} and \code{Y}).
+#'
+#' @param sce SingleCellExperiment containing IMC data
+#' @param x_str The column of \code{colData(sce)} that codes for the x coordinate
+#' @param y_str The column of \code{colData(sce)} that codes for the Y coordinate
+#' @param file The output file to write to
+#'
+#' @export
+to_csv <- function(sce,
+                   file,
+                   x_str = "Location_Center_X",
+                   y_str = "Location_Center_Y",
+                   exprs_values = "logcounts") {
+
+  mat <- t(assay(sce, exprs_values))
+
+  mat <- cbind(
+    data.frame(X = colData(sce)[[x_str]],
+               Y = colData(sce)[[y_str]]),
+    mat
+  )
+
+  write.csv(mat, file)
+
+}
 

@@ -9,6 +9,9 @@ plotSpatial(
   colour_by = NULL,
   x_str = "Location_Center_X",
   y_str = "Location_Center_Y",
+  winsorize = FALSE,
+  w_limits = c(0.05, 0.95),
+  exprs_values = "logcounts",
   ...
 )
 }
