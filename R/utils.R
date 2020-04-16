@@ -38,21 +38,26 @@ winsorize <- function(sce,
 #' @param x_str The column of \code{colData(sce)} that codes for the x coordinate
 #' @param y_str The column of \code{colData(sce)} that codes for the Y coordinate
 #' @param file The output file to write to
+#' @param include_xy Logical: should spatial location be written as first two
+#' columns?
 #'
 #' @export
 to_csv <- function(sce,
                    file,
+                   include_xy = TRUE,
                    x_str = "Location_Center_X",
                    y_str = "Location_Center_Y",
                    exprs_values = "logcounts") {
 
   mat <- t(assay(sce, exprs_values))
 
-  mat <- cbind(
-    data.frame(X = colData(sce)[[x_str]],
-               Y = colData(sce)[[y_str]]),
-    mat
-  )
+  if(include_xy) {
+    mat <- cbind(
+      data.frame(X = colData(sce)[[x_str]],
+                 Y = colData(sce)[[y_str]]),
+      mat
+    )
+  }
 
   write.csv(mat, file)
 
