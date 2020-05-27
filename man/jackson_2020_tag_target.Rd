@@ -4,7 +4,9 @@
 \name{jackson_2020_tag_target}
 \alias{jackson_2020_tag_target}
 \title{Map of tag to targets for Jackson et al. (Nature 2020)}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 51 rows and 2 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 51 rows and 2 columns.
+}
 \usage{
 jackson_2020_tag_target
 }
