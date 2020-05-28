@@ -24,8 +24,7 @@ patient_clinSubtype_colours <- function(){
     "HR+HER2-" = pal[1],
     "TripleNeg" = pal[3],
     "HR+HER2+" = pal[4],
-    "HR-HER2+" = pal[5],
-    "NA" = "lightgrey"
+    "HR-HER2+" = pal[5]
   )
   clinSubtype_colours
 }
@@ -36,8 +35,7 @@ patient_response_colours <- function(){
   clinSubtype_colours <- c(
     "Resistant" = pal[3],
     "Refractory" = pal[4],
-    "Sensitive" = pal[1],
-    "NA" = "lightgrey"
+    "Sensitive" = pal[1]
   )
   clinSubtype_colours
 }
