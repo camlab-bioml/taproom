@@ -63,3 +63,17 @@ to_csv <- function(sce,
 
 }
 
+#' Get cell type assignments given probability matrix
+#'
+#' @export
+get_celltypes <- function(prob_mat, thresh = 0.7) {
+  if(is.data.frame(prob_mat)) {
+    prob_mat <- as.matrix(prob_mat)
+  }
+  celltypes <- apply(prob_mat, 1, function(x) {
+    colnames(prob_mat)[which.max(x)]
+  })
+
+  celltypes[rowMaxs(prob_mat) < thresh] <- "Unknown"
+  celltypes
+}

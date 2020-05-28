@@ -4,7 +4,9 @@
 \name{jackson_2020_markers}
 \alias{jackson_2020_markers}
 \title{Marker information from Jackson et al. (Nature 2020)}
-\format{An object of class \code{list} of length 2.}
+\format{
+An object of class \code{list} of length 2.
+}
 \usage{
 jackson_2020_markers
 }
