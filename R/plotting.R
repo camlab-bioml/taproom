@@ -48,3 +48,45 @@ plotSpatial <- function(sce,
               colour_by = cb,
               ...)
 }
+
+#' Create an expression heatmap
+#' 
+#' Note that this creates a \code{Heatmap} object. To plot,
+#' call \code{draw(...)} on the returned object.
+#' 
+#' @param sce A \code{SingleCellExperiment} containing expression values
+#' @param cell_type_column The column of \code{colData(sce)} that contains 
+#' cell type annotation
+#' @param assay The assay of \code{sce} containg expression data to plot
+#' @param thresh The threshold to winsorize expression values at
+#' 
+#' @return A heatmap of class \code{ComplexHeatmap::Heatmap}
+#' 
+#' @importFrom SummarizedExperiment assay colData
+#' @importFrom ComplexHeatmap Heatmap HeatmapAnnotation
+#' @importFrom viridis viridis
+createHeatmap <- function(sce,
+                          cell_type_column = "cell_type",
+                          assay = "logcounts",
+                          thresh = 2) {
+  
+  lc <- t(as.matrix(assay(sce, assay)))
+  lc <- scale(lc)
+
+  lc[lc > thresh] <- thresh
+  lc[lc < -thresh] <- -thresh
+  
+  cell_types = colData(sce)[[ cell_type_column ]]
+
+  celltype_annot <- HeatmapAnnotation(`Cell type` = cell_types, 
+                                      which="column")  
+  
+  type_exprs <- Heatmap(t(lc), 
+                        name = "Expression",
+                        column_title = "Cell",
+                        col=viridis(100),
+                        top_annotation = celltype_annot,
+                        show_column_names = FALSE,
+                        column_order = order(cell_types))
+  type_exprs
+}

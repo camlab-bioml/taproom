@@ -4,7 +4,7 @@
 \alias{get_celltypes}
 \title{Get cell type assignments given probability matrix}
 \usage{
-get_celltypes(mat, thresh = 0.7)
+get_celltypes(prob_mat, thresh = 0.7)
 }
 \description{
 Get cell type assignments given probability matrix
