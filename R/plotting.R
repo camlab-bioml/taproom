@@ -61,6 +61,8 @@ plotSpatial <- function(sce,
 #' @param thresh The threshold to winsorize expression values at
 #' 
 #' @return A heatmap of class \code{ComplexHeatmap::Heatmap}
+#'
+#' @export
 #' 
 #' @importFrom SummarizedExperiment assay colData
 #' @importFrom ComplexHeatmap Heatmap HeatmapAnnotation
