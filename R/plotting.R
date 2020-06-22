@@ -81,7 +81,8 @@ createHeatmap <- function(sce,
   cell_types = colData(sce)[[ cell_type_column ]]
 
   celltype_annot <- HeatmapAnnotation(`Cell type` = cell_types, 
-                                      which="column")  
+                                      which="column",
+                                      col = list(`Cell type` = jackson_basel_colours()))  
   
   type_exprs <- Heatmap(t(lc), 
                         name = "Expression",
