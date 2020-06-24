@@ -2,5 +2,6 @@
 #' @export
 astir_paper_theme <- function() {
   cowplot::theme_cowplot(font_size = 12) +
-    theme(strip.background = element_rect(fill = "white"))
+    theme(strip.background = element_rect(fill = "white"),
+          strip.text = element_text(face="bold"))
 }
