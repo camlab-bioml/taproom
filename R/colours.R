@@ -35,6 +35,7 @@ patient_clinSubtype_colours <- function(){
   clinSubtype_colours
 }
 
+#' @export
 patient_clinSubtype_colours_wagner <- function(){
   pal <- c("#648FFF", "#785EF0", "#DC267F", "#FE6100", "#FFB000")
   
@@ -58,4 +59,16 @@ patient_response_colours <- function(){
     "Sensitive" = pal[1]
   )
   clinSubtype_colours
+}
+
+#' @export
+cohort_colours <- function(){
+  pal <- c("#65061B", "#B1169A", "#5B76D7", "#E5AE6C")
+  
+  cohort_cols <- c(
+    "basel" = pal[1],
+    "zurich1" = pal[2],
+    "wagner" = pal[3],
+    "schapiro" = pal[4]
+  )
 }
