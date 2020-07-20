@@ -63,12 +63,12 @@ patient_response_colours <- function(){
 
 #' @export
 cohort_colours <- function(){
-  pal <- c("#65061B", "#B1169A", "#5B76D7", "#E5AE6C")
+  pal <- wes_palette("Darjeeling2", 4, type = c("discrete"))
   
   cohort_cols <- c(
-    "basel" = pal[1],
-    "zurich1" = pal[2],
-    "wagner" = pal[3],
-    "schapiro" = pal[4]
+    "Basel" = pal[1],
+    "Zurich1" = pal[2],
+    "Wagner" = pal[3],
+    "Schapiro" = pal[4]
   )
 }
