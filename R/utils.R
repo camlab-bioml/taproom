@@ -12,6 +12,10 @@ winsorize_one <- function(y,
 }
 
 #' Winsorize the (log) counts
+#' @param sce An input \code{SummarizedExperiment} or \code{SingleCellExperiment}
+#' @param exprs_values Type of input?
+#' @param w_limits cut off limits?
+#' @importFrom SummarizedExperiment assay<- assay
 #'
 #' @export
 winsorize <- function(sce,
@@ -40,6 +44,9 @@ winsorize <- function(sce,
 #' @param file The output file to write to
 #' @param include_xy Logical: should spatial location be written as first two
 #' columns?
+#' @param exprs_values The type of the SingleCellExperiment?
+#' 
+#' @importFrom utils write.csv
 #'
 #' @export
 to_csv <- function(sce,
@@ -64,6 +71,8 @@ to_csv <- function(sce,
 }
 
 #' Get cell type assignments given probability matrix
+#' @param prob_mat A probability matrix?
+#' @param thresh A measure for cell type assignment?
 #'
 #' @export
 get_celltypes <- function(prob_mat, thresh = 0.7) {

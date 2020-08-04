@@ -24,6 +24,12 @@ plotSpatial(
 
 \item{y_str}{The column of \code{colData(sce)} that codes for the Y coordinate}
 
+\item{winsorize}{IDK ????}
+
+\item{w_limits}{Range of probabilities to use in quantile()}
+
+\item{exprs_values}{Type of SingleCellExperiment}
+
 \item{...}{Additional arguments to pass to \code{plotColData}}
 }
 \description{

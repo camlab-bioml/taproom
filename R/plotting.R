@@ -6,10 +6,14 @@
 #' @param colour_by Either a feature name or column of \code{colData(sce)}
 #' @param x_str The column of \code{colData(sce)} that codes for the x coordinate
 #' @param y_str The column of \code{colData(sce)} that codes for the Y coordinate
+#' @param winsorize IDK ????
+#' @param w_limits Range of probabilities to use in quantile()
+#' @param exprs_values Type of SingleCellExperiment
 #' @param ... Additional arguments to pass to \code{plotColData}
 #'
 #' @importFrom scater plotColData
-#' @importFrom SummarizedExperiment colData
+#' @importFrom SummarizedExperiment assay colData colData<-
+#' @importFrom stats quantile
 #'
 #' @export
 plotSpatial <- function(sce,

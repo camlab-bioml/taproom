@@ -22,7 +22,8 @@ jackson_basel_colours <- function() {
   celltype_colours
 }
 
-#' @export
+#' Color maps of patient clinical subtypes
+#'  @export
 patient_clinSubtype_colours <- function(){
   pal <- c("#648FFF", "#785EF0", "#DC267F", "#FE6100", "#FFB000")
 
@@ -35,6 +36,7 @@ patient_clinSubtype_colours <- function(){
   clinSubtype_colours
 }
 
+#' Set Wagner colour maps to patient clinical subtypes
 #' @export
 patient_clinSubtype_colours_wagner <- function(){
   pal <- c("#648FFF", "#785EF0", "#DC267F", "#FE6100", "#FFB000")
@@ -49,6 +51,7 @@ patient_clinSubtype_colours_wagner <- function(){
   clinSubtype_colours
 }
 
+#' Colour maps of patient responses
 #' @export
 patient_response_colours <- function(){
   pal <- c("#648FFF", "#785EF0", "#DC267F", "#FE6100", "#FFB000")
@@ -61,6 +64,7 @@ patient_response_colours <- function(){
   clinSubtype_colours
 }
 
+#' Group colors
 #' @export
 cohort_colours <- function(){
   pal <- wes_palette("Darjeeling2", 4, type = c("discrete"))

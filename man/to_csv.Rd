@@ -24,6 +24,8 @@ columns?}
 \item{x_str}{The column of \code{colData(sce)} that codes for the x coordinate}
 
 \item{y_str}{The column of \code{colData(sce)} that codes for the Y coordinate}
+
+\item{exprs_values}{The type of the SingleCellExperiment?}
 }
 \description{
 Writes the cell names as row names, and the (X,Y) co-ordinates

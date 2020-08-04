@@ -17,6 +17,8 @@ imc_exclusive_marker_score(
 \item{marker_1}{The name of the first marker (normally keratin)}
 
 \item{marker_2}{The name of the second marker (normally CD45/PTPRC)}
+
+\item{assay_name}{Type of SingleCellExperiment}
 }
 \description{
 Implements a very basic QC test: CD45 and keratin should exhibit mutually

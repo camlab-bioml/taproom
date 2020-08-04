@@ -6,6 +6,13 @@
 \usage{
 winsorize(sce, exprs_values = "logcounts", w_limits = c(0.05, 0.95))
 }
+\arguments{
+\item{sce}{An input \code{SummarizedExperiment} or \code{SingleCellExperiment}}
+
+\item{exprs_values}{Type of input?}
+
+\item{w_limits}{cut off limits?}
+}
 \description{
 Winsorize the (log) counts
 }

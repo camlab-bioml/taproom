@@ -9,6 +9,7 @@
 #' @param sce An input \code{SummarizedExperiment} or \code{SingleCellExperiment}
 #' @param marker_1 The name of the first marker (normally keratin)
 #' @param marker_2 The name of the second marker (normally CD45/PTPRC)
+#' @param assay_name Type of SingleCellExperiment
 #'
 #' @importFrom MASS rlm
 #' @importFrom SummarizedExperiment assay
