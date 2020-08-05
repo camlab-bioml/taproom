@@ -14,3 +14,6 @@ get_celltypes(prob_mat, thresh = 0.7)
 \description{
 Get cell type assignments given probability matrix
 }
+\examples{
+counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
+}

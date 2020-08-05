@@ -15,6 +15,7 @@
 #' @importFrom SummarizedExperiment assay
 #' @importFrom broom tidy
 #'
+#' @examples counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
 #' @export
 imc_exclusive_marker_score <- function(sce,
                                        marker_1 = "pan Cytokeratin",

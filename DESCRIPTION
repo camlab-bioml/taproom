@@ -15,7 +15,6 @@ LazyData: true
 Imports:
   yaml,
   scater,
-  SingleCellExperiment,
   BiocGenerics,
   SummarizedExperiment,
   plyr,
@@ -28,7 +27,9 @@ Imports:
   cowplot,
   stats,
   viridis,
-  ComplexHeatmap
+  ComplexHeatmap,
+  ggplot2,
+  wesanderson,
 Suggests:
     crayon,
     knitr,

@@ -12,3 +12,6 @@ tidy_rownames_jackson(sce)
 \description{
 Convert from original SC_Dat.csv rownames to understandable ones
 }
+\examples{
+ counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
+}

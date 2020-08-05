@@ -15,3 +15,6 @@ A marker list including cell type and state markers
 \description{
 Read a marker yaml file
 }
+\examples{
+        counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
+}

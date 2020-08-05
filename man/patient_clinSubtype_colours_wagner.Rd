@@ -9,3 +9,6 @@ patient_clinSubtype_colours_wagner()
 \description{
 Set Wagner colour maps to patient clinical subtypes
 }
+\examples{
+patient_clinSubtype_colours_wagner()
+}

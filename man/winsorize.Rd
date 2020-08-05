@@ -16,3 +16,6 @@ winsorize(sce, exprs_values = "logcounts", w_limits = c(0.05, 0.95))
 \description{
 Winsorize the (log) counts
 }
+\examples{
+counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
+}

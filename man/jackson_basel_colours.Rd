@@ -9,3 +9,6 @@ jackson_basel_colours()
 \description{
 Celltype colours for Jackson Basel 2020
 }
+\examples{
+colors <-jackson_basel_colours()
+}

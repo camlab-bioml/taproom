@@ -35,3 +35,6 @@ plotSpatial(
 \description{
 Plot the spatial variation in gene expression or colData
 }
+\examples{
+        counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
+}

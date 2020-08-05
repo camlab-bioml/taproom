@@ -9,3 +9,6 @@ patient_response_colours()
 \description{
 Colour maps of patient responses
 }
+\examples{
+patient_response_colours()
+}

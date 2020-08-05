@@ -2,12 +2,13 @@
 % Please edit documentation in R/colours.R
 \name{patient_clinSubtype_colours}
 \alias{patient_clinSubtype_colours}
-\title{Color maps of patient clinical subtypes
- @export}
+\title{Color maps of patient clinical subtypes}
 \usage{
 patient_clinSubtype_colours()
 }
 \description{
 Color maps of patient clinical subtypes
- @export
+}
+\examples{
+patient_clinSubtype_colours()
 }

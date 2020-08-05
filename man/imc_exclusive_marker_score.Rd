@@ -26,3 +26,6 @@ exclusive expression, so performs a robust regression to check this trend,
 and reports the z-statistic. The more negative this is, the better the
 mutually-exclusive expression (to a first approximation).
 }
+\examples{
+counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
+}

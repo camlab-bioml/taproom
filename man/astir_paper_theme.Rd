@@ -9,3 +9,6 @@ astir_paper_theme()
 \description{
 Create a theme for all plot for the astir paper
 }
+\examples{
+astir_paper_theme()
+}

@@ -9,3 +9,6 @@ cohort_colours()
 \description{
 Group colors
 }
+\examples{
+counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
+}

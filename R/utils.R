@@ -17,6 +17,7 @@ winsorize_one <- function(y,
 #' @param w_limits cut off limits?
 #' @importFrom SummarizedExperiment assay<- assay
 #'
+#' @examples counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
 #' @export
 winsorize <- function(sce,
                       exprs_values = "logcounts",
@@ -47,7 +48,8 @@ winsorize <- function(sce,
 #' @param exprs_values The type of the SingleCellExperiment?
 #' 
 #' @importFrom utils write.csv
-#'
+#' 
+#' @examples counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
 #' @export
 to_csv <- function(sce,
                    file,
@@ -74,6 +76,7 @@ to_csv <- function(sce,
 #' @param prob_mat A probability matrix?
 #' @param thresh A measure for cell type assignment?
 #'
+#' @examples counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
 #' @export
 get_celltypes <- function(prob_mat, thresh = 0.7) {
   if(is.data.frame(prob_mat)) {

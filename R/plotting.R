@@ -14,7 +14,9 @@
 #' @importFrom scater plotColData
 #' @importFrom SummarizedExperiment assay colData colData<-
 #' @importFrom stats quantile
-#'
+#' 
+#' @examples 
+#'         counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
 #' @export
 plotSpatial <- function(sce,
                         colour_by = NULL,
@@ -65,7 +67,9 @@ plotSpatial <- function(sce,
 #' @param thresh The threshold to winsorize expression values at
 #' 
 #' @return A heatmap of class \code{ComplexHeatmap::Heatmap}
-#'
+#' 
+#' @examples 
+#'         counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
 #' @export
 #' 
 #' @importFrom SummarizedExperiment assay colData
