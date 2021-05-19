@@ -66,7 +66,7 @@ to_csv <- function(sce,
 #' Get cell type assignments given probability matrix
 #'
 #' @export
-get_celltypes <- function(prob_mat, thresh = 0.7) {
+get_celltypes <- function(prob_mat, thresh = 0.5) {
   if(is.data.frame(prob_mat)) {
     prob_mat <- as.matrix(prob_mat)
   }

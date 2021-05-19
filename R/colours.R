@@ -3,16 +3,22 @@
 #' @export
 jackson_basel_colours <- function() {
   pal <- c("#8B5B42", "#AF4EA9", "#FFB60A", "#0AC694", "#0024DD", "#6CC1FF",
-           "#0496FF", "#1DA05B", "#E11E00", "#A78882")
+           "#0496FF", "#1DA05B", "#E11E00", "#A78882", "#BD93D8")
   
   celltype_colours <- c(
     "Stromal" = pal[1],
     "B cells" = pal[2],
+    "Other immune" = pal[2],
     "T cells" = pal[3],
+    "Treg" = pal[3],
     "Macrophage" = pal[4],#
     "Epithelial (basal)" = pal[5],
     "Epithelial (luminal)" = pal[6],
     "Epithelial (other)" = pal[7],
+    "Epithelial" = pal[6],
+    "Epithelial proliferative" = pal[7],
+    "Epithelial immunosuppressive" = pal[5],
+    "Epithelial I-P" = pal[11],
     "Monocyte" = pal[8], #
     "Endothelial" = pal[9],
     "Fibroblasts" = pal[10],
@@ -68,6 +74,7 @@ cohort_colours <- function(){
   cohort_cols <- c(
     "Basel" = pal[1],
     "Zurich1" = pal[2],
+    "Zurich" = pal[2],
     "Wagner" = pal[3],
     "Schapiro" = pal[4]
   )
