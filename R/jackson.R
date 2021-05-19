@@ -12,6 +12,7 @@
 #' @importFrom dplyr left_join mutate case_when filter
 #' @importFrom tibble tibble
 #'
+#' @examples  counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
 #' @export
 tidy_rownames_jackson <- function(sce) {
 

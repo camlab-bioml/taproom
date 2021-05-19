@@ -17,10 +17,15 @@ imc_exclusive_marker_score(
 \item{marker_1}{The name of the first marker (normally keratin)}
 
 \item{marker_2}{The name of the second marker (normally CD45/PTPRC)}
+
+\item{assay_name}{Type of SingleCellExperiment}
 }
 \description{
 Implements a very basic QC test: CD45 and keratin should exhibit mutually
 exclusive expression, so performs a robust regression to check this trend,
 and reports the z-statistic. The more negative this is, the better the
 mutually-exclusive expression (to a first approximation).
+}
+\examples{
+counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
 }

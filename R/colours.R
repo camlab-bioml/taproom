@@ -1,5 +1,6 @@
 
 #' Celltype colours for Jackson Basel 2020
+#' @examples colors <-jackson_basel_colours()
 #' @export
 jackson_basel_colours <- function() {
   pal <- c("#8B5B42", "#AF4EA9", "#FFB60A", "#0AC694", "#0024DD", "#6CC1FF",
@@ -28,6 +29,9 @@ jackson_basel_colours <- function() {
   celltype_colours
 }
 
+#' Color maps of patient clinical subtypes
+#'
+#' @examples patient_clinSubtype_colours()
 #' @export
 patient_clinSubtype_colours <- function(){
   pal <- c("#648FFF", "#785EF0", "#DC267F", "#FE6100", "#FFB000")
@@ -41,6 +45,8 @@ patient_clinSubtype_colours <- function(){
   clinSubtype_colours
 }
 
+#' Set Wagner colour maps to patient clinical subtypes
+#' @examples patient_clinSubtype_colours_wagner()
 #' @export
 patient_clinSubtype_colours_wagner <- function(){
   pal <- c("#648FFF", "#785EF0", "#DC267F", "#FE6100", "#FFB000")
@@ -55,6 +61,8 @@ patient_clinSubtype_colours_wagner <- function(){
   clinSubtype_colours
 }
 
+#' Colour maps of patient responses
+#' @examples patient_response_colours()
 #' @export
 patient_response_colours <- function(){
   pal <- c("#648FFF", "#785EF0", "#DC267F", "#FE6100", "#FFB000")
@@ -67,7 +75,10 @@ patient_response_colours <- function(){
   clinSubtype_colours
 }
 
-#' @export
+#' Group colors
+#' @importFrom wesanderson wes_palette
+#' @examples counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
+#' @export 
 cohort_colours <- function(){
   pal <- wes_palette("Darjeeling2", 4, type = c("discrete"))
   

@@ -6,6 +6,14 @@
 \usage{
 get_celltypes(prob_mat, thresh = 0.7)
 }
+\arguments{
+\item{prob_mat}{A probability matrix?}
+
+\item{thresh}{A measure for cell type assignment?}
+}
 \description{
 Get cell type assignments given probability matrix
+}
+\examples{
+counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
 }

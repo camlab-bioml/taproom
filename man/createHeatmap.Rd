@@ -28,3 +28,6 @@ A heatmap of class \code{ComplexHeatmap::Heatmap}
 Note that this creates a \code{Heatmap} object. To plot,
 call \code{draw(...)} on the returned object.
 }
+\examples{
+        counts <- matrix(rpois(100, lambda = 10), ncol=10, nrow=10)
+}

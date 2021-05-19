@@ -3,19 +3,18 @@ Title: Tools for spAtial PROteOmics
 Version: 0.1.0
 Depends: R (>= 3.6)
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Ehsan",
+           family = "Karimiara",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "e.karimiara@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
-License: What license it uses
+License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
   yaml,
   scater,
-  SingleCellExperiment,
   BiocGenerics,
   SummarizedExperiment,
   plyr,
@@ -23,7 +22,18 @@ Imports:
   MASS,
   broom,
   dplyr,
-  tibble
+  tibble,
+  utils,
+  cowplot,
+  stats,
+  viridis,
+  ComplexHeatmap,
+  ggplot2,
+  wesanderson,
 Suggests:
-  crayon
-RoxygenNote: 7.1.0
+    crayon,
+    knitr,
+    rmarkdown
+RoxygenNote: 7.1.1
+biocViews: Proteomics, CellBiology, Software
+VignetteBuilder: knitr
